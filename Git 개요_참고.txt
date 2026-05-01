@@ -1,0 +1,145 @@
+(.venv) PS C:\Users\Playdata\SKN\skn31> git init
+Initialized empty Git repository in C:/Users/Playdata/SKN/SKN31/.git/
+(.venv) PS C:\Users\Playdata\SKN\skn31> git add .
+(.venv) PS C:\Users\Playdata\SKN\skn31> git commit
+Aborting commit due to empty commit message.
+(.venv) PS C:\Users\Playdata\SKN\skn31> git commit -m "up"
+[main (root-commit) e0fc415] up
+ 115 files changed, 191364 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 00_PDF/Git 개요 (2).pdf
+ create mode 100644 00_PDF/Python 환경 설치.pdf
+ create mode 100644 00_PDF/git작업.txt
+ create mode 100644 00_단위프로젝트/1차 단위프로젝트 주제.md
+ create mode 100644 01_python/01_개요.ipynb
+ create mode 100644 01_python/02_변수와 데이터타입.ipynb
+ create mode 100644 01_python/03_자료구조.ipynb
+ create mode 100644 01_python/04_제어문_컴프리헨션.ipynb
+ create mode 100644 01_python/05_함수.ipynb
+ create mode 100644 01_python/06_객체지향프로그래밍.ipynb
+ create mode 100644 01_python/07_패키지_모듈_import.ipynb
+ create mode 100644 01_python/08_예외처리 (Exception Handling).ipynb
+ create mode 100644 01_python/09_입출력.ipynb
+ create mode 100644 01_python/aaa
+ create mode 100644 01_python/calc.py
+ create mode 100644 01_python/images/ch01_01.png
+ create mode 100644 01_python/images/ch01_02.png
+ create mode 100644 01_python/images/ch01_03.png
+ create mode 100644 01_python/images/ch01_install1.png
+ create mode 100644 01_python/images/ch01_python_logo.png
+ create mode 100644 01_python/images/ch02_01.png
+ create mode 100644 01_python/images/ch03_01.png
+ create mode 100644 01_python/images/ch03_02.png
+ create mode 100644 01_python/images/ch06_01.png
+ create mode 100644 01_python/images/ch09_01.png
+ create mode 100644 01_python/images/ch09_02.png
+ create mode 100644 01_python/images/ch10_01.png
+ create mode 100644 01_python/images/ch10_03.png
+ create mode 100644 01_python/images/stack.png
+ create mode 100644 01_python/my_package/__init__.py
+ create mode 100644 01_python/my_package/greet.py
+ create mode 100644 01_python/my_txt.txt
+ create mode 100644 01_python/run.py
+ create mode 100644 01_python/run2.py
+ create mode 100644 01_python/run3.py
+ create mode 100644 01_python/script.py
+ create mode 100644 01_python/simple_memo.py
+ create mode 100644 01_python/src/common/utils.py
+ create mode 100644 01_python/src/test/app.py
+ create mode 100644 01_python/streamlit/00_streamlit.md
+ create mode 100644 01_python/streamlit/01_write.py
+ create mode 100644 01_python/streamlit/02_table_metric.py
+ create mode 100644 01_python/streamlit/03_input_widget.py
+ create mode 100644 01_python/streamlit/04_layout_cache.py
+ create mode 100644 01_python/streamlit/05_sidebar.py
+ create mode 100644 01_python/streamlit/06_paging.py
+ create mode 100644 01_python/streamlit/data/boston_housing.csv
+ create mode 100644 01_python/streamlit/pages/page1.py
+ create mode 100644 01_python/streamlit/pages/page2.py
+ create mode 100644 01_python/streamlit/pages/page3.py
+ create mode 100644 01_python/streamlit/pages/write.py
+ create mode 100644 01_python/streamlit/save_files/06_객체지향프로그래밍.ipynb
+ create mode 100644 01_python/streamlit/save_files/07_패키지_모듈_import.ipynb
+ create mode 100644 01_python/streamlit/save_files/08_예외처리 (Exception Handling).ipynb
+ create mode 100644 01_python/streamlit/save_files/09_입출력.ipynb
+ create mode 100644 01_python/streamlit/save_files/안전수칙.jpg
+ create mode 100644 01_python/test.ipynb
+ create mode 100644 01_python/test.md
+ create mode 100644 01_python/test.py
+ create mode 100644 01_python/text/a.txt
+ create mode 100644 01_python/text/int_data.pickle
+ create mode 100644 01_python/text/p.pickle
+ create mode 100644 01_python/text/person.pickle
+ create mode 100644 02_sql/01_DDL.sql
+ create mode 100644 02_sql/02_basic_select.sql
+ create mode 100644 02_sql/03_function.sql
+ create mode 100644 02_sql/04_aggregateFunction_groupby.sql
+ create mode 100644 02_sql/05_join.sql
+ create mode 100644 02_sql/06_subquery.sql
+ create mode 100644 02_sql/07_DML.sql
+ create mode 100644 02_sql/SQL.pdf
+ create mode 100644 02_sql/emp_join_erd.png
+ create mode 100644 02_sql/pymysql/pymysql을 이용해 mysql연동.ipynb
+ create mode 100644 02_sql/table생성/emp.sql
+ create mode 100644 02_sql/table생성/emp_erd.png
+ create mode 100644 02_sql/table생성/emp_join.png
+ create mode 100644 02_sql/table생성/emp_join.sql
+ create mode 100644 02_sql/table생성/emp_join_erd.png
+ create mode 100644 02_sql/template/01_DDL.sql
+ create mode 100644 02_sql/template/02_basic_select.sql
+ create mode 100644 02_sql/template/03_function.sql
+ create mode 100644 02_sql/template/04_aggregateFunction_groupby.sql
+ create mode 100644 02_sql/template/05_join.sql
+ create mode 100644 02_sql/template/06_subquery.sql
+ create mode 100644 02_sql/template/07_DML.sql
+ create mode 100644 03_web_crawling/01_데이터수집 개요_BeautifulSoup.ipynb
+ create mode 100644 03_web_crawling/02_requests.ipynb
+ create mode 100644 03_web_crawling/03_Selenium.ipynb
+ create mode 100644 03_web_crawling/HTML_CSS.pdf
+ create mode 100644 03_web_crawling/daum_crawling.py
+ create mode 100644 03_web_crawling/daum_main2.png
+ create mode 100644 03_web_crawling/daum_news_list/2026-04-24-17-24-02.csv
+ create mode 100644 03_web_crawling/daum_news_list/2026-04-24-17-26-18.csv
+ create mode 100644 03_web_crawling/example.html
+ create mode 100644 03_web_crawling/naver_main.png
+ create mode 100644 03_web_crawling/tiger.jpg
+ create mode 100644 04_Pandas를 이용한 정형데이터 분석/01_Pandas_Series.ipynb
+ create mode 100644 04_Pandas를 이용한 정형데이터 분석/02_Pandas_DataFrame.ipynb
+ create mode 100644 04_Pandas를 이용한 정형데이터 분석/03_Pandas_정렬_집계.ipynb
+ create mode 100644 04_Pandas를 이용한 정형데이터 분석/04_Pandas_DataFrame_합치기.ipynb
+ create mode 100644 04_Pandas를 이용한 정형데이터 분석/data/adult.data
+ create mode 100644 04_Pandas를 이용한 정형데이터 분석/data/diamonds.csv
+ create mode 100644 04_Pandas를 이용한 정형데이터 분석/data/flights.csv
+ create mode 100644 04_Pandas를 이용한 정형데이터 분석/data/movie.csv
+ create mode 100644 04_Pandas를 이용한 정형데이터 분석/data/stocks_2016.csv
+ create mode 100644 04_Pandas를 이용한 정형데이터 분석/data/stocks_2017.csv
+ create mode 100644 04_Pandas를 이용한 정형데이터 분석/data/stocks_2018.csv
+ create mode 100644 04_Pandas를 이용한 정형데이터 분석/data/stocks_info.csv
+ create mode 100644 04_Pandas를 이용한 정형데이터 분석/data/tips.csv
+ create mode 100644 04_Pandas를 이용한 정형데이터 분석/data/webbrowser_share.xls
+ create mode 100644 04_Pandas를 이용한 정형데이터 분석/data/강수량.xlsx
+ create mode 100644 04_Pandas를 이용한 정형데이터 분석/data/서울시 연도별 황사 경보발령 현황.csv
+ create mode 100644 04_Pandas를 이용한 정형데이터 분석/가상환경.txt
+ create mode 100644 launch_조짜기.ipynb
+(.venv) PS C:\Users\Playdata\SKN\skn31> git remote add origin https://github.com/leeyonghyok/SKN31.git
+(.venv) PS C:\Users\Playdata\SKN\skn31> git push
+fatal: The current branch main has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin main
+
+To have this happen automatically for branches without a tracking
+upstream, see 'push.autoSetupRemote' in 'git help config'.
+
+(.venv) PS C:\Users\Playdata\SKN\skn31> git push --set-upstream origin main
+Enumerating objects: 131, done.
+Counting objects: 100% (131/131), done.
+Delta compression using up to 16 threads
+Compressing objects: 100% (124/124), done.
+Writing objects: 100% (131/131), 10.40 MiB | 5.40 MiB/s, done.
+Total 131 (delta 12), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (12/12), done.
+To https://github.com/leeyonghyok/SKN31.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+(.venv) PS C:\Users\Playdata\SKN\skn31> git commit -m "up"                                            
