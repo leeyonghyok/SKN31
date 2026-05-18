@@ -26,7 +26,7 @@ def plot_precision_recall_curve(y_proba, pred_proba, estimator_name=None, title=
     disp = PrecisionRecallDisplay(
         precision, recall, 
         average_precision=ap_score,  
-        estimator_name=estimator_name
+        name=estimator_name
     )
     disp.plot()
     if title:
@@ -49,7 +49,7 @@ def plot_roc_curve(y_proba, pred_proba, estimator_name=None, title=None):
     ### 시각화
     disp = RocCurveDisplay(
         fpr=fpr, tpr=tpr, 
-        estimator_name=estimator_name,
+        name=estimator_name,
         roc_auc=auc_score
     )
     disp.plot()
