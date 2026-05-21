@@ -1,0 +1,37 @@
+uv self update
+
+가상환경 생성
+- 가상환경을 만들 working directory(project root) 로 이동
+- uv  venv  .venv  --python=3.13
+
+가상환경 활성화
+- .venv\Scripts\activate
+
+- 현재 사용하는 파이썬의 경로
+uv python find 
+
+- library(패키지) 설치
+uv pip install 패키지명
+
+uv pip install pandas streamlit requests
+
+- VSCode에서 파이썬 환경으로 가상환경을 설정
+  1. 명령팔레트 실행 - `control + shift + p`
+  2. python: select interpreter
+  3. 나오는 파이썬 환경들중 사용할 환경(만든 가상환경)을 선택
+
+
+
+----------------------
+uv venv .venv --python=3.13
+
+.venv\Scripts\activate
+
+명령 팔레트: control + shift + p
+파이썬 인터프리터를 가상환경으로 변경
+
+주피터 노트북에서 "커널선택" 후 생성한 가상환경을 선택한다.
+
+터미널 -> lib 를 설치 (가상환경 활성화 확인)
+
+uv pip install ipykernel  pandas  matplotlib
