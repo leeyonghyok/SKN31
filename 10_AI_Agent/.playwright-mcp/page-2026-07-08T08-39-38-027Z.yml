@@ -1,0 +1,417 @@
+- generic [active] [ref=f2e1]:
+  - generic:
+    - generic:
+      - link "주요 콘텐츠로 이동" [ref=f2e2] [cursor=pointer]
+      - link "접근성 도움말" [ref=f2e3] [cursor=pointer]:
+        - /url: https://support.google.com/websearch/answer/181196?hl=ko
+  - generic [ref=f2e8]:
+    - search [ref=f2e9]:
+      - generic [ref=f2e11]:
+        - link "Google 홈페이지로 이동" [ref=f2e13] [cursor=pointer]:
+          - /url: https://www.google.com/webhp?hl=ko&sa=X&ved=0ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQPAgI
+          - img [ref=f2e14]
+        - generic [ref=f2e21]:
+          - generic [ref=f2e22]:
+            - combobox "검색" [ref=f2e25]: python python
+            - generic [ref=f2e26]:
+              - button "지우기" [ref=f2e28] [cursor=pointer]:
+                - img [ref=f2e30]
+              - generic [ref=f2e33]:
+                - button "입력 도구" [ref=f2e34] [cursor=pointer]:
+                  - img [ref=f2e36]
+                - button "음성 검색" [ref=f2e38] [cursor=pointer]:
+                  - img [ref=f2e39]
+                - button "이미지로 검색" [ref=f2e41] [cursor=pointer]:
+                  - img [ref=f2e42]
+          - button "검색" [ref=f2e44] [cursor=pointer]:
+            - img [ref=f2e47]
+    - generic [ref=f2e49]:
+      - button "설정" [ref=f2e51] [cursor=pointer]:
+        - img [ref=f2e54]
+      - button "공유" [ref=f2e57] [cursor=pointer]:
+        - img [ref=f2e61]
+      - generic [ref=f2e63]:
+        - button "Google 앱" [ref=f2e65] [cursor=pointer]:
+          - img [ref=f2e66]
+        - link "로그인" [ref=f2e70] [cursor=pointer]:
+          - /url: https://accounts.google.com/ServiceLogin?hl=ko&passive=true&continue=https://www.google.com/search%3Fq%3Dpython%26sei%3DyAxOaoykG6jg0PEPj5zn6As&ec=futura_srp_og_si_72236_p
+  - generic [ref=f2e72]:
+    - navigation [ref=f2e78]:
+      - generic [ref=f2e84]:
+        - list [ref=f2e85]:
+          - listitem [ref=f2e86]:
+            - link "AI 모드" [ref=f2e89] [cursor=pointer]:
+              - /url: /search?q=python&sca_esv=f59d3dc769decac2&udm=50&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA7x3ZDrzG9CGSPZ4zI2S4lLj6BitkpM31E1HosXg1VqDaaMZo9DOq_ATyaRanqTYxueustLmDkJUwqGcoCsvyizCA81H-Y6XiSZujDyEktlhRHo9awo4HvKbPeo2m3MSYiVVXOGRWPn4MJZLCeBGURo-BGm6oIVYmmAxTlO9sOno6iQ5Org&aep=1&ntc=1&sa=X&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ2J8OegQIGhAD
+              - generic [ref=f2e92]: AI 모드
+          - listitem [ref=f2e93]:
+            - link "전체" [disabled] [ref=f2e94]:
+              - generic [ref=f2e96]: 전체
+          - listitem [ref=f2e97]:
+            - link "이미지" [ref=f2e98] [cursor=pointer]:
+              - /url: /search?sca_esv=f59d3dc769decac2&udm=2&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA7x3ZDrzG9CGSPZ4zI2S4lLj6BitkpM31E1HosXg1VqDaaMZo9DOq_ATyaRanqTYxueustLmDkJUwqGcoCsvyizCA81H-Y6XiSZujDyEktlhRHo9awo4HvKbPeo2m3MSYiVVXOGRWPn4MJZLCeBGURo-BGm6oIVYmmAxTlO9sOno6iQ5Org&q=python&sa=X&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQtKgLegQIIBAB
+              - generic [ref=f2e100]: 이미지
+          - listitem [ref=f2e101]:
+            - link "동영상" [ref=f2e102] [cursor=pointer]:
+              - /url: /search?sca_esv=f59d3dc769decac2&udm=7&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA7x3ZDrzG9CGSPZ4zI2S4lLj6BitkpM31E1HosXg1VqDaaMZo9DOq_ATyaRanqTYxueustLmDkJUwqGcoCsvyizCA81H-Y6XiSZujDyEktlhRHo9awo4HvKbPeo2m3MSYiVVXOGRWPn4MJZLCeBGURo-BGm6oIVYmmAxTlO9sOno6iQ5Org&q=python&sa=X&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQtKgLegQIHhAB
+              - generic [ref=f2e104]: 동영상
+          - listitem [ref=f2e105]:
+            - link "쇼핑" [ref=f2e106] [cursor=pointer]:
+              - /url: /search?sca_esv=f59d3dc769decac2&udm=28&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA7x3ZDrzG9CGSPZ4zI2S4lLj6BitkpM31E1HosXg1VqDaaMZo9DOq_ATyaRanqTYxueustLmDkJUwqGcoCsvyizCA81H-Y6XiSZujDyEktlhRHo9awo4HvKbPeo2m3MSYiVVXOGRWPn4MJZLCeBGURo-BGm6oIVYmmAxTlO9sOno6iQ5Org&q=python&ved=1t:220175&ictx=111
+              - generic [ref=f2e108]: 쇼핑
+          - listitem [ref=f2e109]:
+            - link "뉴스" [ref=f2e110] [cursor=pointer]:
+              - /url: /search?sca_esv=f59d3dc769decac2&q=python&tbm=nws&source=lnms&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA7x3ZDrzG9CGSPZ4zI2S4lLj6BitkpM31E1HosXg1VqDaaMZo9DOq_ATyaRanqTYxueustLmDkJUwqGcoCsvyizCA81H-Y6XiSZujDyEktlhRHo9awo4HvKbPeo2m3MSYiVVXOGRWPn4MJZLCeBGURo-BGm6oIVYmmAxTlO9sOno6iQ5Org&sa=X&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ0pQJegQIHBAB
+              - generic [ref=f2e112]: 뉴스
+          - listitem [ref=f2e113]:
+            - link "짧은 동영상" [ref=f2e114] [cursor=pointer]:
+              - /url: /search?sca_esv=f59d3dc769decac2&udm=39&fbs=ABfTbFUgt-aXEFkBhPo84x72c1XoLHFs6TcISYM3FayWAWWA7x3ZDrzG9CGSPZ4zI2S4lLj6BitkpM31E1HosXg1VqDaaMZo9DOq_ATyaRanqTYxueustLmDkJUwqGcoCsvyizCA81H-Y6XiSZujDyEktlhRHo9awo4HvKbPeo2m3MSYiVVXOGRWPn4MJZLCeBGURo-BGm6oIVYmmAxTlO9sOno6iQ5Org&q=python&sa=X&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQs6gLegQIHRAB
+              - generic [ref=f2e116]: 짧은 동영상
+          - listitem [ref=f2e117]:
+            - button "필터 더보기" [ref=f2e118] [cursor=pointer]:
+              - generic "필터 더보기" [ref=f2e119]:
+                - generic [ref=f2e120]:
+                  - generic [ref=f2e121]: 더보기
+                  - img [ref=f2e123]
+        - button "도구" [ref=f2e126] [cursor=pointer]:
+          - generic [ref=f2e128]:
+            - generic [ref=f2e129]: 도구
+            - img [ref=f2e131]
+    - heading "검색결과" [level=1] [ref=f2e134]
+    - main [ref=f2e140]:
+      - generic [ref=f2e144]:
+        - generic [ref=f2e147]:
+          - heading "사이트링크가 있는 웹 검색결과" [level=2] [ref=f2e148]
+          - generic [ref=f2e149]:
+            - generic [ref=f2e153]:
+              - generic [ref=f2e155]:
+                - link "Welcome to Python.org Python.org https://www.python.org" [ref=f2e157] [cursor=pointer]:
+                  - /url: https://www.python.org/
+                  - heading "Welcome to Python.org" [level=3] [ref=f2e158]
+                  - generic [ref=f2e164]:
+                    - generic [ref=f2e166]: Python.org
+                    - generic [ref=f2e168]: https://www.python.org
+                - button "검색결과에 관한 정보" [ref=f2e171] [cursor=pointer]:
+                  - img [ref=f2e174]
+              - generic [ref=f2e178]:
+                - text: Whether you're new to programming or an experienced developer, it's
+                - emphasis [ref=f2e179]: easy to learn and use Python
+                - text: . Start with our Beginner's Guide. Download. Python source code ...
+            - group "방문 기록 기반 맞춤형 추천" [ref=f2e180]:
+              - rowgroup [ref=f2e181]:
+                - row "Downloads Download the latest version of Python · Licenses. All Python ..." [ref=f2e182]:
+                  - cell "Downloads Download the latest version of Python · Licenses. All Python ..." [ref=f2e183]:
+                    - generic [ref=f2e189]:
+                      - heading "Downloads" [level=3] [ref=f2e190]:
+                        - link "Downloads" [ref=f2e191] [cursor=pointer]:
+                          - /url: https://www.python.org/downloads/
+                          - text: Downloads
+                      - generic [ref=f2e194]: Download the latest version of Python · Licenses. All Python ...
+                - row "Python Releases for Windows Stable Releases · Download Windows installer (64-bit ..." [ref=f2e195]:
+                  - cell "Python Releases for Windows Stable Releases · Download Windows installer (64-bit ..." [ref=f2e196]:
+                    - generic [ref=f2e202]:
+                      - heading "Python Releases for Windows" [level=3] [ref=f2e203]:
+                        - link "Python Releases for Windows" [ref=f2e204] [cursor=pointer]:
+                          - /url: https://www.python.org/downloads/windows/
+                          - text: Python Releases for Windows
+                      - generic [ref=f2e207]: Stable Releases · Download Windows installer (64-bit ...
+                - row "The Python Tutorial The Python Tutorial¶. Tip. This tutorial is designed for ..." [ref=f2e208]:
+                  - cell "The Python Tutorial The Python Tutorial¶. Tip. This tutorial is designed for ..." [ref=f2e209]:
+                    - generic [ref=f2e215]:
+                      - heading "The Python Tutorial" [level=3] [ref=f2e216]:
+                        - link "The Python Tutorial" [ref=f2e217] [cursor=pointer]:
+                          - /url: https://docs.python.org/3/tutorial/index.html
+                          - text: The Python Tutorial
+                      - generic [ref=f2e220]: The Python Tutorial¶. Tip. This tutorial is designed for ...
+                - row "Python 3.12.0 This is the stable release of Python 3.12.0. Python 3.12.0 is the ..." [ref=f2e221]:
+                  - cell "Python 3.12.0 This is the stable release of Python 3.12.0. Python 3.12.0 is the ..." [ref=f2e222]:
+                    - generic [ref=f2e228]:
+                      - heading "Python 3.12.0" [level=3] [ref=f2e229]:
+                        - link "Python 3.12.0" [ref=f2e230] [cursor=pointer]:
+                          - /url: https://www.python.org/downloads/release/python-3120/
+                          - text: Python 3.12.0
+                      - generic [ref=f2e233]: This is the stable release of Python 3.12.0. Python 3.12.0 is the ...
+                - row "Python Docs Python 3.14.6 documentation · What's new in Python 3.14? Or ..." [ref=f2e234]:
+                  - cell "Python Docs Python 3.14.6 documentation · What's new in Python 3.14? Or ..." [ref=f2e235]:
+                    - generic [ref=f2e241]:
+                      - heading "Python Docs" [level=3] [ref=f2e242]:
+                        - link "Python Docs" [ref=f2e243] [cursor=pointer]:
+                          - /url: https://docs.python.org/
+                          - text: Python Docs
+                      - generic [ref=f2e246]: Python 3.14.6 documentation · What's new in Python 3.14? Or ...
+                - row "python.org 검색결과 더보기 »" [ref=f2e248]:
+                  - cell "python.org 검색결과 더보기 »" [ref=f2e249]:
+                    - link "python.org 검색결과 더보기 »" [ref=f2e251] [cursor=pointer]:
+                      - /url: /search?q=python+site:python.org&sca_esv=f59d3dc769decac2&sa=X&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQrAN6BAgMEAE
+        - generic [ref=f2e252]:
+          - generic [ref=f2e256]:
+            - generic [ref=f2e259]:
+              - link "Python - 파이썬 나무위키 https://namu.wiki › Python" [ref=f2e261] [cursor=pointer]:
+                - /url: https://namu.wiki/w/Python
+                - heading "Python - 파이썬" [level=3] [ref=f2e262]
+                - generic [ref=f2e268]:
+                  - generic [ref=f2e270]: 나무위키
+                  - generic [ref=f2e272]: https://namu.wiki › Python
+              - button "검색결과에 관한 정보" [ref=f2e275] [cursor=pointer]:
+                - img [ref=f2e278]
+            - generic [ref=f2e281]:
+              - generic [ref=f2e282]: 7일 전 —
+              - generic [ref=f2e283]:
+                - emphasis [ref=f2e284]: 파이썬은 멀티 패러다임 언어
+                - text: 로, 절차적 프로그래밍, 함수형 프로그래밍, 객체 지향 등 다양한 패러다임을 모두 지원하는 언어이다. 속도에서 약간의 희생 ...
+          - generic [ref=f2e288]:
+            - generic [ref=f2e291]:
+              - link "파이썬 - 위키백과, 우리 모두의 백과사전 Wikipedia https://ko.wikipedia.org › wiki › 파이썬" [ref=f2e293] [cursor=pointer]:
+                - /url: https://ko.wikipedia.org/wiki/%ED%8C%8C%EC%9D%B4%EC%8D%AC
+                - heading "파이썬 - 위키백과, 우리 모두의 백과사전" [level=3] [ref=f2e294]
+                - generic [ref=f2e300]:
+                  - generic [ref=f2e302]: Wikipedia
+                  - generic [ref=f2e304]: https://ko.wikipedia.org › wiki › 파이썬
+              - button "검색결과에 관한 정보" [ref=f2e307] [cursor=pointer]:
+                - img [ref=f2e310]
+            - generic [ref=f2e314]:
+              - emphasis [ref=f2e315]: 파이썬
+              - text: 은 다중 패러다임 프로그래밍 언어로, 객체 지향 프로그래밍과 구조적 프로그래밍을 완전히 지원하며, 많은 기능들이 함수형 프로그래밍과 관점 지향 프로그래밍( ...
+          - generic [ref=f2e319]:
+            - generic [ref=f2e322]:
+              - link "Python Lab - 파이썬 랩 Code.org https://code.org › tools › python-lab" [ref=f2e324] [cursor=pointer]:
+                - /url: https://code.org/ko/tools/python-lab
+                - heading "Python Lab - 파이썬 랩" [level=3] [ref=f2e325]
+                - generic [ref=f2e331]:
+                  - generic [ref=f2e333]: Code.org
+                  - generic [ref=f2e335]: https://code.org › tools › python-lab
+              - button "검색결과에 관한 정보" [ref=f2e338] [cursor=pointer]:
+                - img [ref=f2e341]
+            - generic [ref=f2e345]:
+              - text: 파이썬 랩.
+              - emphasis [ref=f2e346]: 실제 Python 코드 실행하는 학생 친화적인 IDE
+              - text: 입니다. Students can write and run Python code directly in a browser-based environment.
+          - generic [ref=f2e350]:
+            - generic [ref=f2e352]:
+              - heading "동영상" [level=2] [ref=f2e353]
+              - button "검색결과에 관한 정보" [ref=f2e354] [cursor=pointer]:
+                - img [ref=f2e357]
+            - generic [ref=f2e360]:
+              - generic [ref=f2e365]:
+                - generic [ref=f2e366]:
+                  - generic [ref=f2e367]:
+                    - 'link "Python Basics - Chapter 1: What is Python? | 2023 Jump to ... YouTube 조코딩 JoCoding 2023. 6. 30." [ref=f2e369] [cursor=pointer]':
+                      - /url: https://www.youtube.com/watch?v=mEeZoDGITGw
+                      - 'heading "Python Basics - Chapter 1: What is Python? | 2023 Jump to ... YouTube 조코딩 JoCoding 2023. 6. 30." [level=3] [ref=f2e370]':
+                        - generic [ref=f2e373]: "Python Basics - Chapter 1: What is Python? | 2023 Jump to ..."
+                        - generic [ref=f2e375]:
+                          - generic [ref=f2e376]:
+                            - text: YouTube
+                            - generic [ref=f2e377]: · 조코딩 JoCoding
+                          - generic [ref=f2e378]: 2023. 6. 30.
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - text: YouTube
+                              - generic: · 조코딩 JoCoding
+                        - button "검색결과에 관한 정보" [ref=f2e379] [cursor=pointer]:
+                          - img [ref=f2e382]
+                  - 'button "조코딩 JoCoding님이 YouTube에 게시한 Python Basics - Chapter 1: What is Python? | 2023 Jump to .... Google에서 재생. 53:42" [ref=f2e384] [cursor=pointer]':
+                    - generic [ref=f2e385]:
+                      - img [ref=f2e388]
+                      - generic [ref=f2e391]:
+                        - generic [ref=f2e392]: 53:42
+                        - img [ref=f2e395]
+                - button "이 동영상의 주요 순간 10개" [ref=f2e401] [cursor=pointer]:
+                  - generic [ref=f2e404]:
+                    - generic [ref=f2e407]: 이 동영상의 주요 순간 10개
+                    - img [ref=f2e409]
+              - generic [ref=f2e417]:
+                - generic [ref=f2e418]:
+                  - link "파이썬 코딩 무료 강의 (기본편) - 6시간 뒤면 여러분도 개발자가 ... YouTube 나도코딩 2020. 2. 20." [ref=f2e420] [cursor=pointer]:
+                    - /url: https://www.youtube.com/watch?v=kWiCuklohdY
+                    - heading "파이썬 코딩 무료 강의 (기본편) - 6시간 뒤면 여러분도 개발자가 ... YouTube 나도코딩 2020. 2. 20." [level=3] [ref=f2e421]:
+                      - generic [ref=f2e424]: 파이썬 코딩 무료 강의 (기본편) - 6시간 뒤면 여러분도 개발자가 ...
+                      - generic [ref=f2e426]:
+                        - generic [ref=f2e427]:
+                          - text: YouTube
+                          - generic [ref=f2e428]: · 나도코딩
+                        - generic [ref=f2e429]: 2020. 2. 20.
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - text: YouTube
+                            - generic: · 나도코딩
+                      - button "검색결과에 관한 정보" [ref=f2e430] [cursor=pointer]:
+                        - img [ref=f2e433]
+                - button "나도코딩님이 YouTube에 게시한 파이썬 코딩 무료 강의 (기본편) - 6시간 뒤면 여러분도 개발자가 .... Google에서 재생. 6:01:28" [ref=f2e435] [cursor=pointer]:
+                  - generic [ref=f2e436]:
+                    - img [ref=f2e442]
+                    - generic [ref=f2e445]:
+                      - generic [ref=f2e446]: 6:01:28
+                      - img [ref=f2e449]
+              - generic [ref=f2e455]:
+                - generic [ref=f2e456]:
+                  - generic [ref=f2e457]:
+                    - 'link "[Python Coding Basics] Chapter 1: Preparing for Python YouTube 나도메이커 2022. 11. 25." [ref=f2e459] [cursor=pointer]':
+                      - /url: https://www.youtube.com/watch?v=6J0lqMPi8AI
+                      - 'heading "[Python Coding Basics] Chapter 1: Preparing for Python YouTube 나도메이커 2022. 11. 25." [level=3] [ref=f2e460]':
+                        - generic [ref=f2e463]: "[Python Coding Basics] Chapter 1: Preparing for Python"
+                        - generic [ref=f2e465]:
+                          - generic [ref=f2e466]:
+                            - text: YouTube
+                            - generic [ref=f2e467]: · 나도메이커
+                          - generic [ref=f2e468]: 2022. 11. 25.
+                    - generic:
+                      - generic:
+                        - generic:
+                          - generic:
+                            - generic:
+                              - text: YouTube
+                              - generic: · 나도메이커
+                        - button "검색결과에 관한 정보" [ref=f2e469] [cursor=pointer]:
+                          - img [ref=f2e472]
+                  - 'button "나도메이커님이 YouTube에 게시한 [Python Coding Basics] Chapter 1: Preparing for Python. Google에서 재생. 34:44" [ref=f2e474] [cursor=pointer]':
+                    - generic [ref=f2e475]:
+                      - img [ref=f2e478]
+                      - generic [ref=f2e481]:
+                        - generic [ref=f2e482]: 34:44
+                        - img [ref=f2e485]
+                - button "이 동영상의 주요 순간 6개" [ref=f2e491] [cursor=pointer]:
+                  - generic [ref=f2e494]:
+                    - generic [ref=f2e497]: 이 동영상의 주요 순간 6개
+                    - img [ref=f2e499]
+            - link "모든 동영상 보기" [ref=f2e503] [cursor=pointer]:
+              - /url: /search?sca_esv=f59d3dc769decac2&udm=7&q=python&sa=X&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ8ccDKAJ6BAg9EAQ
+              - separator [ref=f2e504]
+              - generic [ref=f2e505]:
+                - generic [ref=f2e506]: 모두 보기
+                - img [ref=f2e508]
+          - generic [ref=f2e513]:
+            - generic [ref=f2e516]:
+              - link "Python란 무엇인가요? - Python 언어 설명 Amazon Web Services (AWS) https://aws.amazon.com › ... › 개발자 도구" [ref=f2e518] [cursor=pointer]:
+                - /url: https://aws.amazon.com/ko/what-is/python/
+                - heading "Python란 무엇인가요? - Python 언어 설명" [level=3] [ref=f2e519]
+                - generic [ref=f2e525]:
+                  - generic [ref=f2e527]: Amazon Web Services (AWS)
+                  - generic [ref=f2e529]: https://aws.amazon.com › ... › 개발자 도구
+              - button "검색결과에 관한 정보" [ref=f2e532] [cursor=pointer]:
+                - img [ref=f2e535]
+            - generic [ref=f2e539]:
+              - text: Phython은
+              - emphasis [ref=f2e540]: 웹 애플리케이션, 소프트웨어 개발, 데이터 과학, 기계 학습(ML)에 널리 사용되는 프로그래밍 언어
+              - text: 입니다. 개발자는 Python이 효율적이고 배우기 쉬우며 여러 ...
+          - generic [ref=f2e544]:
+            - generic [ref=f2e547]:
+              - link "Python 3.13 - Windows에서 무료 다운로드 및 설치 Microsoft Store https://apps.microsoft.com › detail" [ref=f2e549] [cursor=pointer]:
+                - /url: https://apps.microsoft.com/detail/9pnrbtzxmb4z?hl=ko-KR&gl=CZ
+                - heading "Python 3.13 - Windows에서 무료 다운로드 및 설치" [level=3] [ref=f2e550]
+                - generic [ref=f2e556]:
+                  - generic [ref=f2e558]: Microsoft Store
+                  - generic [ref=f2e560]: https://apps.microsoft.com › detail
+              - button "검색결과에 관한 정보" [ref=f2e563] [cursor=pointer]:
+                - img [ref=f2e566]
+            - generic [ref=f2e570]:
+              - emphasis [ref=f2e571]: Python
+              - text: is an easy to learn, powerful programming language. It has efficient high-level data structures and a simple but effective approach to ...
+      - generic [ref=f2e573]:
+        - generic [ref=f2e578]:
+          - heading "관련 검색어" [level=2] [ref=f2e580]
+          - generic [ref=f2e582]:
+            - generic [ref=f2e583]:
+              - link "Python online" [ref=f2e587] [cursor=pointer]:
+                - /url: /search?sca_esv=f59d3dc769decac2&q=Python+online&sa=X&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ1QJ6BAgjEAE
+                - generic [ref=f2e588]:
+                  - generic [ref=f2e593]: Python online
+                  - img [ref=f2e597]
+              - link "Python 연산자" [ref=f2e602] [cursor=pointer]:
+                - /url: /search?sca_esv=f59d3dc769decac2&q=Python+%EC%97%B0%EC%82%B0%EC%9E%90&sa=X&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ1QJ6BAguEAE
+                - generic [ref=f2e603]:
+                  - generic [ref=f2e608]: Python 연산자
+                  - img [ref=f2e612]
+              - link "파이썬 다운로드" [ref=f2e617] [cursor=pointer]:
+                - /url: /search?sca_esv=f59d3dc769decac2&q=%ED%8C%8C%EC%9D%B4%EC%8D%AC+%EB%8B%A4%EC%9A%B4%EB%A1%9C%EB%93%9C&sa=X&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ1QJ6BAgsEAE
+                - generic [ref=f2e618]:
+                  - generic [ref=f2e623]: 파이썬 다운로드
+                  - img [ref=f2e627]
+              - link "Python 문법" [ref=f2e632] [cursor=pointer]:
+                - /url: /search?sca_esv=f59d3dc769decac2&q=Python+%EB%AC%B8%EB%B2%95&sa=X&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ1QJ6BAgoEAE
+                - generic [ref=f2e633]:
+                  - generic [ref=f2e638]: Python 문법
+                  - img [ref=f2e642]
+            - generic [ref=f2e644]:
+              - link "Python 의미" [ref=f2e648] [cursor=pointer]:
+                - /url: /search?sca_esv=f59d3dc769decac2&q=Python+%EC%9D%98%EB%AF%B8&sa=X&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ1QJ6BAgvEAE
+                - generic [ref=f2e649]:
+                  - generic [ref=f2e654]: Python 의미
+                  - img [ref=f2e658]
+              - link "Python 설치" [ref=f2e663] [cursor=pointer]:
+                - /url: /search?sca_esv=f59d3dc769decac2&q=Python+%EC%84%A4%EC%B9%98&sa=X&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ1QJ6BAgtEAE
+                - generic [ref=f2e664]:
+                  - generic [ref=f2e669]: Python 설치
+                  - img [ref=f2e673]
+              - link "Python 사용법" [ref=f2e678] [cursor=pointer]:
+                - /url: /search?sca_esv=f59d3dc769decac2&q=Python+%EC%82%AC%EC%9A%A9%EB%B2%95&sa=X&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ1QJ6BAgrEAE
+                - generic [ref=f2e679]:
+                  - generic [ref=f2e684]: Python 사용법
+                  - img [ref=f2e688]
+              - link "Python 뱀" [ref=f2e693] [cursor=pointer]:
+                - /url: /search?sca_esv=f59d3dc769decac2&q=Python+%EB%B1%80&sa=X&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ1QJ6BAgkEAE
+                - generic [ref=f2e694]:
+                  - generic [ref=f2e699]: Python 뱀
+                  - img [ref=f2e703]
+        - navigation [ref=f2e705]:
+          - heading "페이지 탐색" [level=1] [ref=f2e706]
+          - text: "1"
+          - link "Page 2" [ref=f2e709] [cursor=pointer]:
+            - /url: /search?q=python&sca_esv=f59d3dc769decac2&ei=yAxOaoXoNea-0PEPpt7GuAk&start=10&sa=N&sstk=AU9db-C5Yc-gUxGeXVObDbG98kXShXmXIEMdvJyNVYmTlXrWymD3gxatA6d2hFBShJLJQRHxW6e1VAI2d4zSRt_-g4KdAodITgwwVQ&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ8tMDegQIIRAE
+            - text: "2"
+          - link "Page 3" [ref=f2e711] [cursor=pointer]:
+            - /url: /search?q=python&sca_esv=f59d3dc769decac2&ei=yAxOaoXoNea-0PEPpt7GuAk&start=20&sa=N&sstk=AU9db-C5Yc-gUxGeXVObDbG98kXShXmXIEMdvJyNVYmTlXrWymD3gxatA6d2hFBShJLJQRHxW6e1VAI2d4zSRt_-g4KdAodITgwwVQ&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ8tMDegQIIRAG
+            - text: "3"
+          - link "Page 4" [ref=f2e713] [cursor=pointer]:
+            - /url: /search?q=python&sca_esv=f59d3dc769decac2&ei=yAxOaoXoNea-0PEPpt7GuAk&start=30&sa=N&sstk=AU9db-C5Yc-gUxGeXVObDbG98kXShXmXIEMdvJyNVYmTlXrWymD3gxatA6d2hFBShJLJQRHxW6e1VAI2d4zSRt_-g4KdAodITgwwVQ&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ8tMDegQIIRAI
+            - text: "4"
+          - link "Page 5" [ref=f2e715] [cursor=pointer]:
+            - /url: /search?q=python&sca_esv=f59d3dc769decac2&ei=yAxOaoXoNea-0PEPpt7GuAk&start=40&sa=N&sstk=AU9db-C5Yc-gUxGeXVObDbG98kXShXmXIEMdvJyNVYmTlXrWymD3gxatA6d2hFBShJLJQRHxW6e1VAI2d4zSRt_-g4KdAodITgwwVQ&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ8tMDegQIIRAK
+            - text: "5"
+          - link "Page 6" [ref=f2e717] [cursor=pointer]:
+            - /url: /search?q=python&sca_esv=f59d3dc769decac2&ei=yAxOaoXoNea-0PEPpt7GuAk&start=50&sa=N&sstk=AU9db-C5Yc-gUxGeXVObDbG98kXShXmXIEMdvJyNVYmTlXrWymD3gxatA6d2hFBShJLJQRHxW6e1VAI2d4zSRt_-g4KdAodITgwwVQ&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ8tMDegQIIRAM
+            - text: "6"
+          - link "Page 7" [ref=f2e719] [cursor=pointer]:
+            - /url: /search?q=python&sca_esv=f59d3dc769decac2&ei=yAxOaoXoNea-0PEPpt7GuAk&start=60&sa=N&sstk=AU9db-C5Yc-gUxGeXVObDbG98kXShXmXIEMdvJyNVYmTlXrWymD3gxatA6d2hFBShJLJQRHxW6e1VAI2d4zSRt_-g4KdAodITgwwVQ&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ8tMDegQIIRAO
+            - text: "7"
+          - link "Page 8" [ref=f2e721] [cursor=pointer]:
+            - /url: /search?q=python&sca_esv=f59d3dc769decac2&ei=yAxOaoXoNea-0PEPpt7GuAk&start=70&sa=N&sstk=AU9db-C5Yc-gUxGeXVObDbG98kXShXmXIEMdvJyNVYmTlXrWymD3gxatA6d2hFBShJLJQRHxW6e1VAI2d4zSRt_-g4KdAodITgwwVQ&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ8tMDegQIIRAQ
+            - text: "8"
+          - link "Page 9" [ref=f2e723] [cursor=pointer]:
+            - /url: /search?q=python&sca_esv=f59d3dc769decac2&ei=yAxOaoXoNea-0PEPpt7GuAk&start=80&sa=N&sstk=AU9db-C5Yc-gUxGeXVObDbG98kXShXmXIEMdvJyNVYmTlXrWymD3gxatA6d2hFBShJLJQRHxW6e1VAI2d4zSRt_-g4KdAodITgwwVQ&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ8tMDegQIIRAS
+            - text: "9"
+          - link "Page 10" [ref=f2e725] [cursor=pointer]:
+            - /url: /search?q=python&sca_esv=f59d3dc769decac2&ei=yAxOaoXoNea-0PEPpt7GuAk&start=90&sa=N&sstk=AU9db-C5Yc-gUxGeXVObDbG98kXShXmXIEMdvJyNVYmTlXrWymD3gxatA6d2hFBShJLJQRHxW6e1VAI2d4zSRt_-g4KdAodITgwwVQ&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ8tMDegQIIRAU
+            - text: "10"
+          - heading "다음" [level=2] [ref=f2e727]:
+            - link "다음" [ref=f2e728] [cursor=pointer]:
+              - /url: /search?q=python&sca_esv=f59d3dc769decac2&ei=yAxOaoXoNea-0PEPpt7GuAk&start=10&sa=N&sstk=AU9db-C5Yc-gUxGeXVObDbG98kXShXmXIEMdvJyNVYmTlXrWymD3gxatA6d2hFBShJLJQRHxW6e1VAI2d4zSRt_-g4KdAodITgwwVQ&ved=2ahUKEwiF7NCU18KVAxVmHzQIHSavEZcQ8NMDegQIIRAW
+              - generic [ref=f2e730]: 다음
+      - navigation
+    - contentinfo [ref=f2e731]:
+      - heading "바닥글 링크" [level=1] [ref=f2e732]
+      - generic [ref=f2e736]:
+        - generic [ref=f2e738]:
+          - text: 대한민국
+          - generic [ref=f2e740]:
+            - button "금천구 서울특별시 - IP 주소 기반" [ref=f2e742] [cursor=pointer]:
+              - generic [ref=f2e743]: 금천구 서울특별시
+              - generic [ref=f2e745]:
+                - text: "-"
+                - generic [ref=f2e746]: IP 주소 기반
+            - text: "-"
+            - button "위치 업데이트" [ref=f2e748] [cursor=pointer]: 위치 업데이트
+        - generic [ref=f2e751]:
+          - link "도움말" [ref=f2e752] [cursor=pointer]:
+            - /url: https://support.google.com/websearch/?p=ws_results_help&hl=ko&fg=1
+          - link "의견 보내기" [ref=f2e753] [cursor=pointer]:
+            - /url: "#"
+          - link "개인정보처리방침" [ref=f2e754] [cursor=pointer]:
+            - /url: https://policies.google.com/privacy?hl=ko&fg=1
+          - link "약관" [ref=f2e755] [cursor=pointer]:
+            - /url: https://policies.google.com/terms?hl=ko&fg=1

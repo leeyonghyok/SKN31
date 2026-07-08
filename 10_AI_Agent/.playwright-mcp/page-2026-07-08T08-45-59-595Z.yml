@@ -1,0 +1,79 @@
+- generic [active] [ref=e1]:
+  - link "본문 바로가기" [ref=e2] [cursor=pointer]:
+    - /url: "#container"
+  - generic [ref=e3]:
+    - banner [ref=e4]:
+      - menubar [ref=e6]:
+        - heading "NAVER 날씨" [level=1] [ref=e7]:
+          - link "NAVER" [ref=e8] [cursor=pointer]:
+            - /url: https://www.naver.com
+            - generic [ref=e9]: NAVER
+          - link "날씨" [ref=e10] [cursor=pointer]:
+            - /url: /today/09545101
+        - menubar [ref=e12]:
+          - menuitem "홈" [ref=e13] [cursor=pointer]
+          - generic [ref=e14]: 선택됨
+          - menuitem "예보비교" [ref=e15] [cursor=pointer]
+          - menuitem "미세먼지" [ref=e16] [cursor=pointer]
+          - menuitem "지도" [ref=e17] [cursor=pointer]
+          - menuitem "기상특보" [ref=e18] [cursor=pointer]
+          - text: new
+          - menuitem "세이프티" [ref=e19] [cursor=pointer]
+        - button "검색 펼치기" [ref=e21] [cursor=pointer]:
+          - generic [ref=e23]: 검색 펼치기
+    - main [ref=e24]:
+      - generic [ref=e26]:
+        - generic [ref=e27]:
+          - generic [ref=e39]:
+            - heading "오늘의 생활·보건 지수" [level=2] [ref=e40]
+            - button "도움말" [ref=e41] [cursor=pointer]:
+              - generic [ref=e42]: 도움말
+          - generic [ref=e45]:
+            - heading [level=2] [ref=e46]
+            - list [ref=e47]
+            - button "뉴스 더보기" [ref=e48] [cursor=pointer]: 뉴스 더보기
+        - generic [ref=e49]:
+          - generic [ref=e51]:
+            - heading "전국날씨" [level=2] [ref=e52]
+            - tablist
+            - tabpanel [ref=e53]
+            - paragraph [ref=e54]:
+              - link "기상청" [ref=e55] [cursor=pointer]:
+                - /url: https://www.weather.go.kr/w/index.do
+              - generic [ref=e56]: 발표,
+              - link "웨더아이" [ref=e57] [cursor=pointer]:
+                - /url: https://www.weatheri.co.kr
+              - generic [ref=e58]: 제공
+          - generic [ref=e62]:
+            - heading "일출일몰" [level=2] [ref=e64]
+            - paragraph [ref=e65]
+    - contentinfo [ref=e70]:
+      - generic [ref=e71]:
+        - generic [ref=e72]:
+          - generic [ref=e73]:
+            - link "로그인" [ref=e74] [cursor=pointer]:
+              - /url: "#"
+              - strong [ref=e75]: 로그인
+            - link "전체서비스" [ref=e76] [cursor=pointer]:
+              - /url: https://m.naver.com/services.html?f=svc.weather
+          - generic [ref=e77]:
+            - link "날씨도움말" [ref=e78] [cursor=pointer]:
+              - /url: https://help.naver.com/alias/weather/weather_3.naver
+            - link "개인정보처리방침" [ref=e79] [cursor=pointer]:
+              - /url: https://policy.naver.com/policy/privacy.html
+              - strong [ref=e80]: 개인정보처리방침
+            - link "고객센터" [ref=e81] [cursor=pointer]:
+              - /url: https://help.naver.com/index.help?lang=ko
+        - paragraph [ref=e82]: 본 콘텐츠의 저작권은 제공처에 있으며, 이를 무단 이용하는 경우 저작권법 등에 따라 법적책임을 질 수 있습니다.
+        - list [ref=e83]:
+          - listitem [ref=e84]: "사업자등록번호: 220-81-62517"
+          - listitem [ref=e85]: "통신판매업신고번호: 220-81-62517"
+          - listitem [ref=e86]:
+            - text: "대표이사: 최수연"
+            - link "사업자정보 확인" [ref=e87] [cursor=pointer]:
+              - /url: http://www.ftc.go.kr/bizCommPop.do?wrkr_no=2208162517
+          - listitem [ref=e88]: "주소: 경기도 성남시 분당구 정자일로 95, NAVER 1784, 13561"
+          - listitem [ref=e89]: "대표전화: 1588-3820"
+        - link "NAVER" [ref=e91] [cursor=pointer]:
+          - /url: https://www.navercorp.com/
+          - generic [ref=e92]: NAVER

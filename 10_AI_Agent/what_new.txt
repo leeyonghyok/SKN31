@@ -1,0 +1,11 @@
+Python 3.14 신규 기능 요약
+
+- 가장 큰 변화: 지연된 애너테이션 평가(PEP 649/749), 표준 라이브러리의 다중 인터프리터 지원(PEP 734), 템플릿 문자열(t-strings, PEP 750), 외부 디버거 인터페이스(PEP 768), Zstandard 지원(PEP 784), 개선된 오류 메시지.
+- 언어/런타임: 예외 처리 문법 완화(PEP 758), finally 블록의 제어 흐름에 대한 경고(PEP 765), 새 인터프리터 타입, free-threaded 모드 개선, 증분/세대별 GC 변경(3.14.5부터는 다시 세대별 GC로 복귀).
+- 표준 라이브러리: annotationlib, compression, concurrent.interpreters, string.templatelib 같은 새 모듈 추가. asyncio, pathlib, pdb, uuid, unittest, urllib 등 다수 모듈에 기능 추가 및 개선.
+- 성능: import 속도, asyncio, base64, difflib, pathlib, uuid, textwrap, zlib 등 여러 부분 최적화.
+- 보안/호환성: tarfile 경로 탐색 방지 강화, configparser 쓰기 보안 강화, multiprocessing 기본 시작 방식이 Unix에서 forkserver로 변경, 일부 deprecated API 제거.
+- C API: Python 초기화/설정용 새 C API(PEP 741), 여러 새 유틸리티 함수와 제한 C API 변경, 일부 기존 내부 API의 공개/폐지 정리.
+- 배포/빌드: Emscripten 공식 지원, Android 바이너리 릴리스 제공, PGP 서명 중단, Windows/macOS 바이너리에 실험적 JIT 포함.
+
+전체적으로 Python 3.14는 "성능 개선 + 현대적 동시성/디버깅 기능 + 애너테이션 처리 혁신 + 표준 라이브러리 확장"이 핵심입니다.
