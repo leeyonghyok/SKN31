@@ -1,11 +1,48 @@
-Python 3.14 신규 기능 요약
+Python 3.14 주요 변경 사항 요약
 
-- 가장 큰 변화: 지연된 애너테이션 평가(PEP 649/749), 표준 라이브러리의 다중 인터프리터 지원(PEP 734), 템플릿 문자열(t-strings, PEP 750), 외부 디버거 인터페이스(PEP 768), Zstandard 지원(PEP 784), 개선된 오류 메시지.
-- 언어/런타임: 예외 처리 문법 완화(PEP 758), finally 블록의 제어 흐름에 대한 경고(PEP 765), 새 인터프리터 타입, free-threaded 모드 개선, 증분/세대별 GC 변경(3.14.5부터는 다시 세대별 GC로 복귀).
-- 표준 라이브러리: annotationlib, compression, concurrent.interpreters, string.templatelib 같은 새 모듈 추가. asyncio, pathlib, pdb, uuid, unittest, urllib 등 다수 모듈에 기능 추가 및 개선.
-- 성능: import 속도, asyncio, base64, difflib, pathlib, uuid, textwrap, zlib 등 여러 부분 최적화.
-- 보안/호환성: tarfile 경로 탐색 방지 강화, configparser 쓰기 보안 강화, multiprocessing 기본 시작 방식이 Unix에서 forkserver로 변경, 일부 deprecated API 제거.
-- C API: Python 초기화/설정용 새 C API(PEP 741), 여러 새 유틸리티 함수와 제한 C API 변경, 일부 기존 내부 API의 공개/폐지 정리.
-- 배포/빌드: Emscripten 공식 지원, Android 바이너리 릴리스 제공, PGP 서명 중단, Windows/macOS 바이너리에 실험적 JIT 포함.
+Python 3.14는 언어, 인터프리터, 표준 라이브러리, C API 전반에 걸쳐 큰 변화가 있는 릴리스입니다. 핵심은 다음과 같습니다.
 
-전체적으로 Python 3.14는 "성능 개선 + 현대적 동시성/디버깅 기능 + 애너테이션 처리 혁신 + 표준 라이브러리 확장"이 핵심입니다.
+1) 언어 기능 강화
+- 애너테이션의 지연 평가(PEP 649, 749): 함수·클래스·모듈의 annotation이 즉시 계산되지 않고 필요할 때 평가됩니다.
+- 템플릿 문자열(t-strings, PEP 750): f-string과 비슷하지만, 문자열을 바로 반환하지 않고 static/interpolation 부분을 보존하는 템플릿 객체를 만듭니다.
+- except / except* 문법 개선(PEP 758): 여러 예외를 다룰 때 대괄호 없이 더 간단히 쓸 수 있습니다.
+- finally 블록의 흐름 제어 경고(PEP 765): return/break/continue가 finally를 빠져나가면 SyntaxWarning이 발생합니다.
+- 여러 키워드 오타, 문자열 닫힘, 잘못된 as 사용 등 더 친절한 에러 메시지가 추가되었습니다.
+
+2) 인터프리터 및 실행 모델
+- 표준 라이브러리에서 다중 인터프리터 지원(PEP 734): concurrent.interpreters와 InterpreterPoolExecutor가 추가되었습니다.
+- free-threaded 빌드가 공식 지원 단계로 발전했습니다(PEP 779).
+- 새 tail-call 기반 인터프리터가 도입되어 일부 환경에서 성능 향상이 있습니다.
+- 원격 디버깅 인터페이스(PEP 768)와 sys.remote_exec(), pdb의 원격 attach 기능이 추가되었습니다.
+
+3) 표준 라이브러리의 큰 변화
+- compression.zstd 및 compression 패키지 추가(PEP 784): Zstandard 지원이 들어갔고 tarfile/zipfile/shutil도 연동됩니다.
+- asyncio introspection 기능 강화: 실행 중인 태스크의 상태를 ps/pstree 형태로 볼 수 있습니다.
+- REPL(대화형 셸)에 기본 구문 강조와 import 자동완성이 추가되었습니다.
+- warnings의 thread/async 환경에서의 동작이 더 안전해졌습니다.
+
+4) 주요 모듈 개선
+- pathlib: copy/move 관련 메서드 추가, 파일 정보 캐시용 info 속성 추가.
+- concurrent.futures: InterpreterPoolExecutor, terminate_workers(), kill_workers(), map()의 buffersize 지원.
+- http.server: HTTPS 서버 지원.
+- json, unittest, argparse, datetime, decimal, fractions, getpass, heapq, hmac, inspect, os, re, uuid 등 다수 모듈이 기능 확장 또는 개선되었습니다.
+- typing: Union/UnionType의 런타임 동작이 통합되었고, 런타임 타입 표현 및 introspection 특성이 바뀌었습니다.
+
+5) 성능 개선
+- 여러 표준 라이브러리 모듈의 import 속도가 개선되었습니다.
+- asyncio, base64, textwrap, uuid 등에서 눈에 띄는 속도 향상이 있습니다.
+- zlib, io, pathlib 등도 성능 최적화가 적용되었습니다.
+
+6) 제거 및 비추천 API
+- 오래된 asyncio child watcher API, ast의 오래된 노드 클래스, pathlib의 일부 예전 인자, urllib의 오래된 URL opener 등 여러 deprecated API가 제거되었습니다.
+- 새로 deprecated된 API도 많으며, 특히 asyncio 정책 시스템, codecs.open(), os.popen()/spawn*, 일부 threading/typing 관련 API는 향후 제거가 예고되었습니다.
+
+7) C API와 빌드/배포 변화
+- Python configuration C API(PEP 741)가 크게 확장되었습니다.
+- 새 C API와 private API의 public 전환이 다수 이루어졌습니다.
+- build-details.json이 배포물에 포함됩니다.
+- 공식 릴리스에서 PGP 서명은 중단되고 Sigstore 검증이 사용됩니다.
+- Android 배포본이 제공되며, Emscripten이 공식 지원 플랫폼이 되었습니다.
+
+한줄 요약:
+Python 3.14는 애너테이션 지연 평가, 템플릿 문자열, 다중 인터프리터, free-threaded 지원 강화, Zstandard 추가, 디버깅/REPL 개선 등으로 기능과 사용성이 크게 향상된 릴리스입니다.
