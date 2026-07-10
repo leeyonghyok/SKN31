@@ -15,6 +15,8 @@ EMBEDDING_DIMS = 1536
 
 # --- 경로 설정 ---
 BASE_DIR = Path(__file__).resolve().parent # 프로젝트 root 경로
+# Path(__file__).resolve() config.py 파일의 경로
+
 
 ## 장단기 메모리 Database 파일 경로
 DATABASE_DIR = BASE_DIR / "database"

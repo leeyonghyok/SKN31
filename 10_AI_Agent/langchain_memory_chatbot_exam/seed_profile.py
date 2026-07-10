@@ -18,8 +18,8 @@ USERS = [
     {
         "user_id": DEFAULT_USER_ID,  # "demo_user"
         "profile": {
-            "name": <<본인 정보>>,
-            "job":  <<본인 정보>>,
+            "name": "홍길동",
+            "job":  "AI 개발자",
             "language": "Korean",
             "timezone": "Asia/Seoul",
         },
