@@ -1,0 +1,42 @@
+{
+  "builder_name": "json",
+  "citation": "",
+  "config_name": "default",
+  "dataset_name": "korean-you_tube-comment-sentiment-dataset",
+  "dataset_size": 2867884,
+  "description": "",
+  "download_checksums": {
+    "hf://datasets/LLM-SocialMedia/Korean-YouTube-Comment-Sentiment-Dataset@5e69056fbc11ae2e39d972f43b76a72b066f3e1f/anonymized_data.json": {
+      "num_bytes": 7067555,
+      "checksum": null
+    }
+  },
+  "download_size": 7067555,
+  "features": {
+    "comment": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "labels": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": "",
+  "size_in_bytes": 9935439,
+  "splits": {
+    "train": {
+      "name": "train",
+      "num_bytes": 2867884,
+      "num_examples": 10035,
+      "dataset_name": "korean-you_tube-comment-sentiment-dataset"
+    }
+  },
+  "version": {
+    "version_str": "0.0.0",
+    "major": 0,
+    "minor": 0,
+    "patch": 0
+  }
+}
