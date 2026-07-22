@@ -1,0 +1,1 @@
+console.log("외부 JavaScript 파일을 실행합니다.");

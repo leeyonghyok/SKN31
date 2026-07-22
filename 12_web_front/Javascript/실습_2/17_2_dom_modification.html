@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>17-2. DOM 요소 내용·속성·스타일 변경</title>
+  <style>
+    /* classList 실습에 필요한 최소한의 클래스 */
+    .active {
+      background-color: yellow;
+      color:rgb(201, 15, 15);
+      font-weight:bold;
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+  <script src="./scripts/17_2_dom_modification.js" defer></script>
+</head>
+<body>
+  <h1>17-2. DOM 요소 내용·속성·스타일 변경</h1>
+  <p>선택한 요소의 텍스트, HTML, 속성, 클래스, 스타일, dataset을 변경하는 실습입니다.</p>
+
+  <section>
+    <h2>17.2 텍스트 변경 (textContent)</h2>
+    <p>버튼을 클릭하면 문단의 텍스트가 변경됩니다. 태그 문자열도 글자 그대로 표시됩니다.</p>
+
+    <p id="text-target">변경 전 텍스트</p>
+    <button id="change-text-button" type="button">텍스트 변경</button>
+  </section>
+
+  <section>
+    <h2>17.3 HTML 변경 (innerHTML)</h2>
+    <p>버튼을 클릭하면 innerHTML로 넣은 문자열이 실제 태그로 해석되어 표시됩니다.</p>
+
+    <div id="html-target">변경 전 내용</div>
+    <button id="change-html-button" type="button">HTML 변경</button>
+  </section>
+
+  <section>
+    <h2>17.4 속성 변경 (setAttribute / getAttribute / removeAttribute)</h2>
+    <p>버튼을 클릭하면 링크의 href 속성을 변경·조회하고 target 속성을 삭제합니다.</p>
+
+    <a id="sample-link" href="https://www.google.com" target="_blank">연습용 링크</a>
+    <br>
+    <button id="change-attribute-button" type="button">속성 변경하기</button>
+    <p id="attribute-result">버튼을 클릭해 보세요.</p>
+  </section>
+
+  <section>
+    <h2>17.5 클래스 속성 변경 (classList)</h2>
+    <p>버튼을 클릭할 때마다 active 클래스가 추가되거나 제거되어 배경색이 바뀝니다.</p>
+
+    <p id="class-target">클래스 변경 대상 문단</p>
+    <button id="toggle-class-button" type="button">active 클래스 전환</button>
+    <p id="class-result">현재 active 클래스 여부: false</p>
+  </section>
+
+  <section>
+    <h2>17.6 스타일 변경 (style)</h2>
+    <p>버튼을 클릭하면 인라인 스타일로 글자색과 글자 크기가 변경됩니다.</p>
+
+    <p id="style-target">스타일 변경 대상 문단</p>
+    <button id="change-style-button" type="button">스타일 변경</button>
+  </section>
+
+  <section>
+    <h2>17.11 dataset (data-* 속성)</h2>
+    <p>버튼을 클릭하면 data-user-id 값을 읽어 화면과 콘솔에 출력합니다.</p>
+
+    <button id="user-button1" type="button" data-user-id="10">10번 사용자 선택</button>
+    <button id="user-button2" type="button" data-user-id="20">20번 사용자 선택</button>
+    <p id="dataset-result">버튼을 클릭해 보세요.</p>
+  </section>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>18. 폼 처리</title>
+  <script src="./scripts/18_form_handling.js" defer></script>
+</head>
+<body>
+  <h1>18. 폼 처리</h1>
+  <p>폼 제출, FormData, 폼 요소 접근, 체크박스, 라디오 버튼, 입력값 검증 실습입니다.</p>
+
+  <section>
+    <h2>18.1 ~ 18.6 회원 가입 폼</h2>
+    <p>
+      가입 버튼을 누르면 preventDefault()로 기본 전송을 막고,
+      이름을 검증한 뒤 FormData로 모든 입력값을 읽어 아래 결과 영역에 출력합니다.
+    </p>
+
+    <form id="signup-form">
+      <p>
+        <label>
+          이름
+          <input name="name" type="text">
+        </label>
+      </p>
+
+      <p>
+        <label>
+          나이
+          <input name="age" type="number">
+        </label>
+      </p>
+
+      <p>
+        <label>
+          <input name="agree" type="checkbox">
+          약관 동의
+        </label>
+      </p>
+
+      <p>
+        취미(여러 개 선택 가능):
+        <label><input name="hobby" type="checkbox" value="reading"> 독서</label>
+        <label><input name="hobby" type="checkbox" value="music"> 음악</label>
+        <label><input name="hobby" type="checkbox" value="sports"> 운동</label>
+      </p>
+
+      <p>
+        수준(하나만 선택):
+        <label><input name="level" type="radio" value="beginner"> 초급</label>
+        <label><input name="level" type="radio" value="advanced"> 고급</label>
+      </p>
+
+      <button type="submit">가입</button>
+    </form>
+
+    <h3>제출 결과</h3>
+    <p id="validation-message"></p>
+    <ul id="submit-result"></ul>
+  </section>
+
+  <section>
+    <h2>18.3 폼 요소 접근 (form.elements)</h2>
+    <p>버튼을 클릭하면 제출 없이 form.elements로 현재 이름 입력값과 약관 동의 여부를 읽습니다.</p>
+
+    <button id="read-elements-button" type="button">현재 입력값 확인</button>
+    <p id="elements-result">버튼을 클릭해 보세요.</p>
+  </section>
+</body>
+</html>

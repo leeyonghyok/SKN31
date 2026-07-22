@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>17-3. DOM 요소 생성·삽입·삭제·교체</title>
+  <script src="./scripts/17_3_dom_create_remove.js" defer></script>
+</head>
+
+<body>
+  <h1>17-3. DOM 요소 생성·삽입·삭제·교체</h1>
+  <p>createElement()로 요소를 만들고 삽입·삭제·교체하는 실습입니다.</p>
+
+  <section>
+    <h2>17.7 요소 생성과 17.8 요소 삽입 (createElement / prepend / append)</h2>
+    <p>입력한 내용으로 li 요소를 만들어 목록의 맨 앞 또는 맨 뒤에 추가합니다.</p>
+
+    <label>
+      항목 내용
+      <input id="item-input" type="text" value="새 항목">
+    </label>
+    <button id="prepend-button" type="button">맨 앞에 추가 (prepend)</button>
+    <button id="append-button" type="button">맨 뒤에 추가 (append)</button>
+
+    <ul id="todo-list" style="border: 1px solid gray">
+      <li>기존 항목 1</li>
+      <li>기존 항목 2</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>17.8 형제 위치 삽입 (before / after)</h2>
+    <p>기준 문단의 앞 또는 뒤에 새 문단을 형제 요소로 삽입합니다.</p>
+
+    <p id="base-paragraph" style="border: 1px solid violet">기준 문단</p>
+    <button id="insert-before-button" type="button">앞에 삽입 (before)</button>
+    <button id="insert-after-button" type="button">뒤에 삽입 (after)</button>
+  </section>
+
+  <section>
+    <h2>17.9 요소 삭제 (remove / removeChild)</h2>
+    <p>remove()는 요소 자신을 삭제하고, removeChild()는 부모가 자식을 삭제합니다.</p>
+
+    <ul id="fruit-list">
+      <li id="apple-item">사과 (remove로 삭제)</li>
+      <li>바나나</li>
+      <li>포도</li>
+      <li>수박</li>
+      <li>오렌지</li>
+      <li>참외</li>
+    </ul>
+    <button id="remove-button" type="button">사과 삭제 (remove)</button>
+    <button id="remove-all-button" type="button">모두 삭제 (removeChild)</button>
+  </section>
+
+  <section>
+    <h2>17.10 요소 교체 (replaceWith)</h2>
+    <p>버튼을 클릭하면 기존 문단이 새로 만든 요소로 교체됩니다.</p>
+
+    <p id="old-paragraph">교체 전 문단</p>
+    <button id="replace-button" type="button">요소 교체</button>
+  </section>
+</body>
+
+</html>

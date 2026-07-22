@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>17-1. DOM 요소 선택</title>
+  <script src="./scripts/17_1_dom_selection.js" defer></script>
+</head>
+<body>
+  <h1>17-1. DOM 요소 선택</h1>
+  <p>querySelector()와 querySelectorAll()로 요소를 선택하는 실습입니다. 결과는 화면과 콘솔(F12)에서 확인합니다.</p>
+
+  <section>
+    <h2>17.1.1 querySelector() — 하나의 요소 선택</h2>
+    <p>버튼을 클릭하면 태그, 아이디, 클래스 선택자로 요소를 하나씩 찾아 콘솔에 출력합니다.</p>
+
+    <h3>연습용 제목</h3>
+    <p id="target-paragraph">아이디 선택자로 찾을 문단입니다.</p>
+    <p class="item">클래스가 item인 첫 번째 문단입니다.</p>
+    <p class="item">클래스가 item인 두 번째 문단입니다.</p>
+    <p class="item">클래스가 item인 세 번째 문단입니다.</p>
+    
+
+    <button id="select-one-button" type="button">
+      요소 하나씩 선택하기
+    </button>
+  </section>
+
+  <section>
+    <h2>17.1.2 querySelectorAll() — 모든 요소 선택</h2>
+    <p>버튼을 클릭하면 클래스가 fruit인 모든 항목을 NodeList로 가져와 출력합니다.</p>
+
+    <ul>
+      <li class="fruit">사과</li>
+      <li class="fruit">바나나</li>
+      <li class="fruit">포도</li>
+    </ul>
+
+    <button id="select-all-button" type="button">모든 fruit 선택하기</button>
+    <p id="select-all-result">버튼을 클릭해 보세요.</p>
+  </section>
+
+  <section>
+    <h2>17.1.3 NodeList와 배열의 차이</h2>
+    <p>버튼을 클릭하면 NodeList가 배열이 아닌 것과, 전개 구문으로 배열로 바꾸는 과정을 콘솔에 출력합니다.</p>
+
+    <button id="nodelist-check-button" type="button">NodeList 확인하기</button>
+  </section>
+</body>
+</html>
