@@ -1,0 +1,7 @@
+.margin-1 {
+    margin:10px;
+    padding:10px;
+}
+.box {
+    border: 3px dashed blueviolet;
+}
