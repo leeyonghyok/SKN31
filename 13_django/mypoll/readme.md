@@ -29,3 +29,14 @@
     - 관리자 app에 접속
         - 서버실행 후 (`python manage.py runserver`)
         -`http://127.0.0.1:8000/admin`
+
+
+# tempate 생성
+- 위치
+    - `app/templates` 하위에 작성.
+        - `polls/templates/polls`
+    - 일반적으로 `app이름` 디렉토리를 만들고 그 아래 구현.
+        - `app/templates/app`
+    - 파일명: `xxxxx.html`, html기반으로 작성.
+    - **template은 HTML이 아님.**
+        - html, css, javascript + django template문법

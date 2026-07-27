@@ -28,6 +28,7 @@ class Choice(models.Model):
     question = models.ForeignKey(
         Question,  # 참조 Model 클래스
         on_delete = models.CASCADE # 부모 데이터서 삭제되면 같이 삭제.
+        # related_name="polls_choice_set"
     )
     def __str__(self):
         return f'{self.pk}. {self.choice_text}'

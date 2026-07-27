@@ -1,0 +1,18 @@
+<!-- templates/polls/vote_result.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>투표결과</title>
+</head>
+<body>
+    <h1>투표결과</h1>
+    <b>질문: {{question.pk}}. {{question.question_text}}</b>
+    <ol>
+        {% for choice in choice_list %}
+            <li>{{choice.choice_text}} - {{choice.vote}}</li>   
+        {% endfor %}
+    </ol>
+</body>
+</html>
