@@ -1,0 +1,35 @@
+<!-- templates/polls/vote_form.html -->
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문 폼</title>
+</head>
+<body>
+    <h1>설문 폼</h1>
+    
+    {% if error_message %}
+        <div style="color:red;font-weight:bold;">
+            {{error_message}}
+        </div>
+    {% endif %}
+
+    <b>질문: {{question.pk}}. {{question.question_text}}</b>
+    <form action="/polls/vote" method="post">
+        <!-- question_id를 hidden 전달 -->
+        <input type="hidden" name="question_id" value="{{question.pk}}">
+
+        {# post 방식요청일 때 필수. CSRF공격을 막기 위한 보안 관련 토큰 생성.#}
+        {% csrf_token %} 
+        {% for choice in choice_list %}
+            <label>
+                <input type="radio" name="choice" value="{{choice.pk}}"> 
+                {{choice.choice_text}}
+            </label><br>
+        {% endfor %}
+        <button type="submit">투표</button>
+        <button type="reset">선택해제</button>
+    </form>
+</body>
+</html>

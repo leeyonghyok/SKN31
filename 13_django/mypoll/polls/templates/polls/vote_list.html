@@ -1,30 +1,18 @@
 <!-- templates/polls/vote_list.html -->
-{# Django Template 한줄 주석 #}
-{% comment %}
-블록 주석
-주석
-주석 
-{% endcomment %}
-<!-- HTML 주석 --> 
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>설문목록</title>
-</head>
-<body>
-    
-    <h1>설문 질문 목록</h1>
-    <ul>
-        {# question_list: QuerySet[Question] - Iterable #}
-        {% for question in question_list %}
-            <li>
-                <a href="/polls/vote_form/{{question.pk}}">
-                    {{question.pk}}. {{question.question_text}}
-                </a>
-            </li>
-        {% endfor %}
-    </ul>
-</body>
-</html>
+{% extends 'layout/main_layout.html' %}
+{% block title%}질문목록{% endblock title%}
+{% block contents %}
+<h1>설문 질문 목록</h1>
+<ul class="list-group">
+    {# question_list: QuerySet[Question] - Iterable #}
+    {% for question in question_list %}
+        <li class="list-group-item list-group-item-action">
+            <!--a href="/polls/vote_form/{{question.pk}}"-->
+            <a href="{% url 'polls:vote_form' question.pk %}" class="btn">
+                {{question.pk}}. {{question.question_text | truncatewords:3 }} - 
+                {{question.pub_date | date:'Y-m-d H'}}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+{% endblock contents %}

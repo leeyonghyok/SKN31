@@ -1,17 +1,13 @@
-<!-- polls/templates/polls/error.html -->
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Error</title>
-</head>
-<body>
-    <a href="/polls/welcome">설문 홈</a>
-    <a href="/polls/list">설문 목록</a>
-    <p>
-        <b>요청하신 작업을 처리하지 못했습니다.</b><br>
-        에러메세지: {{error_message}}
-    </p>
-</body>
-</html>l
+{# layout/main_layout.html 를 상속받아서 template을 생성 #}
+{% extends 'layout/main_layout.html' %}
+
+{# block 내에 변경되는 부분을 작성. #}
+{% block title %}오류페이지{%endblock title%}
+{% block contents %}
+<a href="{% url 'polls:polls_welcome' %}">설문 홈</a>
+<a href="{% url 'polls:vote_list' %}">설문 목록</a>
+<p>
+    <b>요청하신 작업을 처리하지 못했습니다.</b><br>
+    에러메세지: {{error_message}}
+</p>
+{% endblock contents %}

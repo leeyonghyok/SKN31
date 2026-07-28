@@ -22,4 +22,6 @@ urlpatterns = [
     # <int:question_id>: 지정한 자리의 값을 int로 변환해서 
     #                            view함수의 question_id 파라미터로 전달해라.
     path("vote", views.vote, name="vote"),
+    path("vote_result/<int:question_id>", views.vote_result, name="vote_result"), # 투표결과
+    path("vote_create_old", views.vote_create_old, name="vote_create_old"), # 질문등록
 ]

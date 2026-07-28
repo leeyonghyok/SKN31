@@ -1,5 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.http import HttpResponse
+from django.db import transaction
+
 from datetime import datetime
 # 모델 클래스  import
 from .models import Question, Choice
@@ -92,16 +95,16 @@ def vote_form(request, question_id):
             {"error_message": f"{question_id}번 질문은 없는 질문 입니다."}
         )
 
-##############################################
+##################################################################################
 # 설문 처리
 ## vote_form에서 선택한 보기의 vote값을 1 증가
 ## 투표 결과를 보여주는 화면을 응답.
 #
 ## 요청 URL: /polls/vote
 ## view함수: vote
-## 응답    : 정상 - polls/vote_result.html
+## 응답    : 정상 - polls/vote_result.html -> vote_result View로 redirect방식으로 이동
 ##           오류 - polls/vote_form.html (보기를 선택하지 않고 투표한 경우)
-##############################################
+##################################################################################
 # 요청파라미터를 조회
 ## GET : request.GET: Dictionary로 요청파라미터를 반환.
 ## POST: request.POST:Dictionary로 요청파라미터를 반환.
@@ -117,17 +120,133 @@ def vote(request):
         choice.vote += 1
         choice.save() # update 쿼리 실행.
 
+        # Redirect 방식으로 vote_result View로 이동
+        ## Web Browser에게 결과를 보여주는 View로 이동하도록 요청. 그래서 새로고침을 하더라도
+        ##   투표가 다시 되는 것을 막도록 한다.
+
+        # url = "/polls/vote_result/"+str(question_id) # redirect할 URL
+        # urls.py 의 설정된 URL을 조회 -> reverse(url mapping 설정이름)
+        # url mapping 설정이름: app_name:설정name
+        url = reverse("polls:vote_result", args=[question_id]) # path paramter: args에 순서대로 입력
+        print(">>>>>>> reverse url:", url)
+        return redirect(url) # 응답상태코드가 302인 HttpResponse를 반환.
+
         # vote_result.html 로 이동
         ## Question과 choice들을 조회
-        question = Question.objects.get(pk=question_id)
-        choice_list = question.choice_set.all()
-        return render(
-            request, 
-            "polls/vote_result.html", 
-            {"question":question, "choice_list":choice_list}
-        )
+        # question = Question.objects.get(pk=question_id)
+        # choice_list = question.choice_set.all()
+        # return render(
+        #     request, 
+        #     "polls/vote_result.html", 
+        #     {"question":question, "choice_list":choice_list}
+        # )
 
 
 
     else: # 보기를 선택하지 않고 투표한 경우.
-        pass
+        # vote_form.html 로 이동. 
+        # context value: Question과 그 choice들 + Error Message
+        question = Question.objects.get(pk=question_id)
+        choice_list = question.choice_set.all()
+        return render(
+            request, 
+            "polls/vote_form.html", 
+            {"question":question, "choice_list":choice_list, "error_message":"보기를 선택하고 투표하세요."}
+        )
+
+
+##############################################
+# 투표 결과를 보여주는 View
+#
+# 요청URL: polls/vote_result/<int:question_id>
+# View함수: vote_result
+# 응답Template: polls/vote_result.html
+##############################################
+def vote_result(request, question_id):
+    question = Question.objects.get(pk=question_id)
+    choice_list = question.choice_set.all()
+    return render(
+        request, 
+        "polls/vote_result.html", 
+        {"question":question, "choice_list":choice_list}
+    )
+
+
+######################################################################
+# 설문 질문 등록
+#
+# 요청 URL: /polls/vote_create
+# View함수: vote_create
+##          요청방식: GET - 등록 폼을 응답
+##                   POST - 등록 처리 
+# 응답: GET - polls/vote_create.html (template)
+#       POST- redirect => vote_list View를 요청 (질문목록으로 이동)
+######################################################################
+# HTTP 요청방식을 조회: request.method (GET, POST, ..)
+
+def vote_create_old(request):
+    http_method = request.method
+    print(">>>>>> Vote Create: ", http_method)
+
+    if http_method == "GET":
+        # 등록폼 template 응답
+        return render(request, "polls/vote_create.html")
+    elif http_method == "POST":
+        # 등록 처리
+        ## 1. 요청파라미터들 조회, 검증
+        ## 2. 처리 -> DB insert
+        ## 3. 응답
+
+        # 요청파라미터 조회 - request.GET, request.POST dictionary 구현체
+        ## 조회메소드: get(이름)-조회결과가 한개인 경우. return: str
+        ##            getlist(이름)-하나의 이름으로 여러개 값이 넘어오는 경우. return list[str]
+        question_text = request.POST.get('question_text') # str
+        choice_list = request.POST.getlist('choice_text') # list[str]
+
+        # 요청파라미터 검증
+        ## question_text로 넘어온 값이 없거나 (있는데 빈문자열이라면)
+        if not question_text or (question_text and not question_text.strip()):
+            return render(
+                request, 
+                "polls/vote_create.html", 
+                {
+                    "error_message":"질문은 한글자 이상 입력하세요.",
+                    "question_text":question_text,
+                    "choice_list":choice_list
+                }
+            )
+    
+        ## 보기 요청파라미터 검증 - 보기가 두개 미만이라면
+        if not choice_list or (choice_list and len([c for c in choice_list if c.strip()])< 2):
+            return render(
+                request, 
+                "polls/vote_create.html", 
+                {
+                    "error_message":"보기는 두개 이상 입력하세요.",
+                    "question_text":question_text,
+                    "choice_list":choice_list
+                }
+            )
+
+        ######## 질문/보기 등록 처리
+        try:
+            ## transaction 처리 -> 질문과 보기가 모두 insert 되거나 실패하면 모두 insert안되도록 보장
+            with transaction.atomic(): # Transaction시작
+                # with block을 정상적으로 실행 수 나오면 commit 실행
+                #           실행중 오류 발생하면 rollback 실행.(DB의 상태를 시작하기 전 상태로 돌린다.)
+                q = Question(question_text=question_text)
+                q.save()
+                
+                for choice_text in choice_list:
+                    choice = Choice(choice_text=choice_text, question=q) # id/vote는 자동입력
+                    choice.save()
+
+        except Exception as e:
+            return render(
+                request, 
+                "polls/error.html", 
+                {"error_message": "설문을 저장하는 도중 에러가 발생했습니다. 관리자에게 문의하세요."}
+            )
+
+    ###### 응답: redirect방식 -> 설문 목록이동
+    return redirect(reverse("polls:vote_list"))
