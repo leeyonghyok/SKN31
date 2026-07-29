@@ -24,4 +24,5 @@ urlpatterns = [
     path("vote", views.vote, name="vote"),
     path("vote_result/<int:question_id>", views.vote_result, name="vote_result"), # 투표결과
     path("vote_create_old", views.vote_create_old, name="vote_create_old"), # 질문등록
+    path("vote_create", views.vote_create, name='vote_create'), # 질문등록 - Form 사용
 ]

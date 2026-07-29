@@ -1,0 +1,93 @@
+<!-- templates/polls/vote_create_form.html -->
+{% extends 'layout/main_layout.html' %}
+{% block title%}질문 등록 - form {% endblock title%}
+{% block contents %}
+<h1>설문 문제 등록 - form 이용</h1>    
+<form method="post">
+    {% csrf_token %}
+    {{ c_formset.management_form }}
+        {% comment%}
+            c_formset.management_form 출력: formset을 이용할 경우 반드시 출력해야 한다.
+            <input type=hidden> 으로 FormSet이 생성한 태그들에 대한 정보를 생성.
+            이 값이 넘어가야 View에서 입력된 값들을 처리할 수 있다.
+            <input type="hidden" name="form-TOTAL_FORMS" value="2" id="id_form-TOTAL_FORMS">
+            <input type="hidden" name="form-INITIAL_FORMS" value="0" id="id_form-INITIAL_FORMS">
+            <input type="hidden" name="form-MIN_NUM_FORMS" value="0" id="id_form-MIN_NUM_FORMS">
+            <input type="hidden" name="form-MAX_NUM_FORMS" value="1000" id="id_form-MAX_NUM_FORMS">
+            # 생성하는 값
+            - TOTAL_FORMS: formset이 관리하는 입력의 개수
+            - INITIAL_FORMS: 처음 생성한 입력의 개수 (원래 있던 값을 가지고 있으면서 생성되는 input-수정관련)
+            - MIN_NUM_FORMS: 최소 허용 입력의 개수
+            - MAX_NUM_FORMS: 최대 허용 입력의 개수
+        {% endcomment%}
+    <h3 class="my-3">질문</h3>
+        {# context value로 넘어온 Form객체를 출력 -> 입력 폼을 생성 #}
+        {{q_form}}
+    <h3 class="mt-3">보기</h3>
+    <div id="choice-layer" class="mt-3">
+        <!-- formset: form들의 집합 -> for in 문을 실행하면 form이 반환. -->
+        <!-- input의 이름: prefix(form)-index-Field이름 (form-0-choice_text)--> 
+        {% for c_form in c_formset %}
+            {{c_form}}
+        {% endfor %}
+    </div>
+    <div id="btn-layer" class="mt-3">
+        <button type="submit" class="btn btn-primary">등록</button>
+        <button type="reset" class="btn btn-primary">초기화</button>
+        <button type="button" id="choice-add-btn" class="btn btn-info">보기추가</button>
+        <button type="button" id="choice-del-btn" class="btn btn-info">보기삭제</button>
+    </div>
+</form>
+{% endblock contents %}
+
+{% block javascript %}
+<script>
+    const add_btn = document.querySelector("#choice-add-btn");
+    const del_btn = document.querySelector("#choice-del-btn");
+    // 보기 추가 버튼 이벤트 처리.
+    add_btn.addEventListener("click", () => {
+        // input[name$='choice_text']: input 태그중, name 속성의 값이 choice_text로 끝나는것
+        // ^= : 시작하는것, *=: 포함하는 것, $=: 끝나는 것. = : 일치
+        const choice_text_cnt = document.querySelectorAll("input[name$='choice_text']").length;
+        const choice_text_input_name = `form-${choice_text_cnt}-choice_text`;
+
+
+        const div = document.createElement("div"); // <div></div>
+        const input = document.createElement("input"); // <input>
+        input.setAttribute("type", "text"); // <input type="text" >
+        input.setAttribute("name", choice_text_input_name);
+        input.setAttribute("id", `id_${choice_text_input_name}`);
+        input.setAttribute("required", true);
+
+        //class: form-control 추가
+        input.classList.add('form-control');
+
+        div.append(input);//<div><input..></div>
+        document.querySelector("#choice-layer").append(div);//choice layer에 생성한 div추가
+
+        // TOTAL_FORMS 의 value를 1 증가
+        const totalForms = document.querySelector("#id_form-TOTAL_FORMS");
+        totalForms.value = parseInt(totalForms.value) + 1
+    }); 
+    
+    // 보기 삭제 버튼 event 처리
+    del_btn.addEventListener("click", ()=>{
+        // 보기 input 하나를 삭제. 
+        // 보기 input은 최소 두개는 유지(두개 이하일 경우는 삭제하지 않는다.)
+        const choice_layer = document.querySelector("#choice-layer");
+        // Node.children : 자식노드들을 nodelist로 반환.
+        if (choice_layer.children.length > 2) {
+            // 부모노드.removeChild(삭제할자식노드)
+            // 부모노드.lastChild -> 마지막 자식 노드반환. 
+            choice_layer.removeChild(choice_layer.lastChild);
+            // TOTAL_FORMS 의 value를 1 감소
+            const totalForms = document.querySelector("#id_form-TOTAL_FORMS");
+            totalForms.value = parseInt(totalForms.value) - 1;
+        } else {
+            // 경고창 (alert("메세지"))
+            alert("보기는 세개 이상일 경우만 삭제할 수 있습니다.")
+        }
+
+    });
+</script>
+{% endblock javascript%}

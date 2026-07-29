@@ -15,7 +15,8 @@ class QuestionForm(forms.Form):
     question_text = forms.CharField( # 문자열 입력 폼 - <input type=text> (default)
         label="", # 입력폼에 대한 label설정
         max_length=200, # 최대 입력 글자수 <input max_length=200
-        widget=forms.TextInput(attr={"class":"form-control"})
+        widget=forms.TextInput(attrs={"class":"form-control"}),
+        strip=False
     )
 
     # 요청파라미터 검증 메소드 => 업무규칙(사용자정의 규칙)을 검증
@@ -23,36 +24,40 @@ class QuestionForm(forms.Form):
     ##  - clean_field이름: ex)clean_question_text() - 특정 필드의 입력값을 검증
     ##  - clean() : 모든 Field들의 입력값들을 검증.
     ## 호출: Form의 각 Field들의 기본 검증을 하고 다 통과하면 clean메소드들을 호출한다.
+    ###     기본검증을 통과한 값들은 self.cleaned_data에 dict 구현체로 저장되 있다.
     #### 기본검증예) EmailField - 이메일 형식인지 검증, IntegerField - 정수인지 검증
     def clean_question_text(self):
         # cleaned_data['요청파라미터이름'] : 기본검증을 통화한 모든 요청파라미터값들.
         txt = self.cleaned_data['question_text'].strip()
         # 질문은 5글자 이상.
+        print("<<<<<<<<<<", len(txt), txt)
         if len(txt) < 5:
             # 검증 실패 -> ValidationError를 발생
             raise forms.ValidationError("질문은 5글자 이상 입력하세요.")
-
         return txt
 
 # 보기 입력
 class ChoiceForm(forms.Form):
-
+    # <input type="text" name="choice_text" class="form-control">
     choice_text = forms.CharField(
         label="",
         max_length=200,
-        widget=forms.TextInput(attrs={"class":"form-control"})
+        widget=forms.TextInput(attrs={"class":"form-control"}),
+        strip=False
     )
 
     def clean_choice_text(self):
-        txt = self.cleaned_data['choice_text'].strip()
-        if not len(txt):
+        txt = self.cleaned_data['choice_text']
+        print("------", len(txt), txt)
+        if not len(txt.strip()):
             raise forms.ValidationError("보기는 1글자 이상 입력하세요.")
 
         return txt
 
-# FormSet을 정의
+# FormSet을 정의 
 # Form + set: Form들의 집합.
-#   
+#  formset_factory(Form, extra=개수, ...) : FormSet 클래스 생성.
+#  - 동일한 input(들)을 여러개 관리할 때 사용.
 ChoiceFormSet = forms.formset_factory(
     ChoiceForm, # Form 클래스
     extra=2,    # Form클래스의 field들을 extra개수 만큼 반복해서 가진다.
