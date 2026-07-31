@@ -15,12 +15,28 @@
 </head>
 
 <body>
+    {# 로그인 관련 체크: user-현재 사용자 정보, user.is_authenticated : 로그인 여부#}
+    {{user}} {{user.is_authenticated}}
     {# 메뉴바 추가 #}
+    <!-- 
+        로그인과 상관없는 메뉴: 설문목록
+        로그인한 사용자 메뉴  : 설문등록, 자기정보조회/수정, 로그아웃, 탈퇴, 
+        로그인안한 사용자메뉴 : 가입, 로그인
+    -->
     <nav class="navbar navbar-expand-sm bg-success bg-opacity-10 mt-3">
         <div class="container">
             <div class="navbar-nav">
                 <a href="{% url 'polls:vote_list' %}" class="nav-link">설문목록</a>
-                <a href="{% url 'polls:vote_create' %}" class="nav-link">설문등록</a>
+                {% if user.is_authenticated %}
+                    <a href="{% url 'polls:vote_create' %}" class="nav-link">설문등록</a>
+                    <a href="{% url 'account:logout' %}" class="nav-link">로그아웃</a>
+                    <a href="{% url 'account:detail' %}" class="nav-link">{{request.user.username}}</a>
+                {% endif %}
+                
+                {% if not user.is_authenticated %}
+                    <a href="{% url 'account:create' %}" class="nav-link">가입</a>
+                    <a href="{% url 'account:login' %}" class="nav-link">로그인</a>
+                {% endif %}
             </div>
         </div>
     </nav>

@@ -38,6 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'polls',
+    'account',
+    'django_bootstrap5',
 ]
 
 MIDDLEWARE = [
@@ -112,7 +114,28 @@ USE_I18N = True
 USE_TZ = True
 
 
+# 기본 User Model 등록
+AUTH_USER_MODEL = 'account.CustomUser'
+
+# login하지 않은 사용자가 @login_required view 를 요청했을 때 이동할 url 경로(login화면)
+# ex) http://127.0.0.1:8000/polls/vote_create 요청 (로그인이 안된 상태)
+# -이동-> http://127.0.0.1:8000/account/login?next=/polls/vote_create
+LOGIN_URL = "/account/login"
+
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'  # static 을 요청할 때의 url 경로.
+STATICFILES_DIRS = [BASE_DIR / "static"] 
+            # base_dir/static 아래에도 static 파일들이 있다.
+
+STATIC_ROOT = BASE_DIR / "static_root"
+# python manage.py collectstatic
+## 모든 static 디렉토리에 있는 static 파일들을 STATIC_ROOT 디렉토리로 복사한다.
+
+####################
+# 파일업로드 설정
+#####################
+MEDIA_ROOT = BASE_DIR / "media"
+MEDIA_URL = "/media/"

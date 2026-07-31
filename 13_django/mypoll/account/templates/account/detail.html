@@ -1,0 +1,50 @@
+<!-- templates/account/detail.html -->
+{% extends 'layout/main_layout.html'%}
+
+{% block title %}사용자 정보{% endblock title %}
+
+{% block contents %}
+<h1>회원정보</h1>
+<table class="table">
+    <tr>
+        <th>Username</th>
+        <td>{{user.username}}</td>
+    </tr>
+    <tr>
+        <th>이름</th>
+        <td>{{user.name}}</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>{{user.email}}</td>
+    </tr>
+    <tr>
+        <th>생일</th>
+        <td>{{user.birthday}}</td>
+    </tr>
+</table>
+
+{% if user.profile_img %}
+<div>
+    <img src="{{user.profile_img.url}}">
+</div>
+{% endif %}
+
+{% if user.upfile %}
+<div>
+    <a href="{{user.upfile.url}}">{{user.upfile}}</a>
+</div>
+{% endif %}
+
+<div class="mt-5">
+    <a href="{% url 'account:update' %}" class="btn btn-primary">수정</a>
+    <a href="{% url 'account:password_change' %}" class="btn btn-primary">패스워드변경</a>
+    <a href="{% url 'account:delete' %}" 
+       class="btn btn-danger"
+       onclick="return confirm('정말 탈퇴하시겠습니까?');">
+       
+    탈퇴</a>
+</div>
+
+{% endblock contents %}
+

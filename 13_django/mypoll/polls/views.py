@@ -1,8 +1,14 @@
+# polls/views.py
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.http import HttpResponse
 from django.db import transaction
 from django.core.paginator import Paginator
+
+from django.contrib.auth.decorators import login_required
+# 로그인 해야지만 처리할 수 있는 view함수에 붙이는 decorator. 로그인이 안된 상태로 요청이 
+# 들어오면 로그인 화면으로 이동(이동할 URL은 settings.py에 LOGIN_URL 변수에 설정)시킨다. 
+
 from datetime import datetime
 # 모델 클래스  import
 from .models import Question, Choice
@@ -139,7 +145,7 @@ def vote_form(request, question_id):
         choice_list = question.choice_set.all()
         return render(
             request, 
-            "polls/vote_form.html",
+            "polls/vote_form.html", 
             {"question":question, "choice_list":choice_list}
         )
     except:
@@ -168,11 +174,42 @@ def vote(request):
     choice_id = request.POST.get("choice")
     question_id = request.POST.get("question_id")
 
+    ##############################################################
+    # 사용자가 이미 투표한 적이 있으면 투표를 못하게 하기 - 쿠키이용
+    #
+    #  - 예제용. 실제는 DB에 저장. (사용자가 어떤 문제들을 투표했는지 DB에 저장 후 검색)
+    # -----------------------------
+    # 쿠키에 투표한 질문들 id들을 저장한다.
+    #  현재 투표하려는 질문의 id가 cookie에 있으면 투표하지 못하게 한다.
+    ##############################################################
+    # 쿠키에 현재 질문 ID가 있는지 확인.
+    voted_question_ids = request.COOKIES.get("voted_question_ids") #value: "1,6,7,10"
+    print(voted_question_ids)
+    if voted_question_ids:
+        if question_id in voted_question_ids.split(","): # 이미 투표한 질문
+            # vote_form.html로 이동
+            question = Question.objects.get(pk=question_id)
+            choice_list = question.choice_set.all()
+            return render(
+                request, 
+                "polls/vote_form.html", 
+                {"question":question, "choice_list":choice_list, 
+                                      "error_message":"이미 투표한 질문입니다."}
+            )
+
+
     if choice_id != None: # 선택된 보기가 넘어온 경우.
         # choice.vote += 1
         choice = Choice.objects.get(pk=choice_id)
         choice.vote += 1
         choice.save() # update 쿼리 실행.
+
+        ######################################################
+        # (투표처리 종료) -> 현재 사용자가 투표한 질문 -> cookie에 등록
+        ######################################################
+        # cookie에 저장할 value 생성
+        voted_question_ids = str(question_id) if not voted_question_ids else f"{voted_question_ids},{question_id}"
+
 
         # Redirect 방식으로 vote_result View로 이동
         ## Web Browser에게 결과를 보여주는 View로 이동하도록 요청. 그래서 새로고침을 하더라도
@@ -183,7 +220,15 @@ def vote(request):
         # url mapping 설정이름: app_name:설정name
         url = reverse("polls:vote_result", args=[question_id]) # path paramter: args에 순서대로 입력
         print(">>>>>>> reverse url:", url)
-        return redirect(url) # 응답상태코드가 302인 HttpResponse를 반환.
+        res =  redirect(url) # 응답상태코드가 302인 HttpResponse를 반환.
+
+        #################################
+        #  HttpResponse에 cookie setting
+        #################################
+        res.set_cookie("voted_question_ids", voted_question_ids,
+                        max_age=60*60*24*365   # 쿠키 만료 기간 "초" 설정.
+                      )
+        return res
 
         # vote_result.html 로 이동
         ## Question과 choice들을 조회
@@ -310,6 +355,8 @@ def vote_create_old(request):
 # Form을 이용
 #######################
 from .forms import QuestionForm, ChoiceFormSet, ChoiceForm
+
+@login_required
 def vote_create(request):
     if request.method == 'GET':
         # 응답화면 반환
